@@ -7,12 +7,11 @@ import {
 import { auth } from "../utils/firebase";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
-import { useNavigate } from "react-router-dom";
-
+import { USER_AVATAR } from "../utils/constent";
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+ 
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -36,10 +35,9 @@ const Login = () => {
         // Update user's display name
         await updateProfile(user, {
           displayName: name.current.value,
+          photoURL: {USER_AVATAR}
         });
 
-        console.log("User signed up:", user);
-        navigate("/signin"); // Redirect to sign-in page after successful sign-up
       } catch (error) {
         setErrorMessage(error.code + " - " + error.message);
       }
@@ -51,8 +49,7 @@ const Login = () => {
           email.current.value, 
           password.current.value
         );
-        console.log("User signed in:", userCredential.user);
-        navigate("/browse"); // Redirect to browse page after successful sign-in
+      
       } catch (error) {
         setErrorMessage(error.code + " - " + error.message);
       }
