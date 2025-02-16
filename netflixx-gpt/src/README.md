@@ -25,9 +25,15 @@
 - Update Store with movies Date
 - Planning for MainConatiner & Secondary Container
 - Fetch Data for Trailer video 
-- Update store with trailer video dtae
+- Update store with trailer video date
 - Embedded the Youtube video and make it autoplay andd mute
 - Tailwind Classes to make Main Container look Awesome
+- Build Secondary Container
+- Build Movie List
+- Build Movie Card
+- TMDB  Image CDN URL
+- Made the Browser page amazing with Tailwind CSS
+- usePopularMovie, useTopMovie, useUpcomingMovie Custom hook
 # Features
 
 - Login/Sign Up
